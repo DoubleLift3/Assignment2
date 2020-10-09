@@ -1,0 +1,16 @@
+{
+    "streams" : {
+        
+        "1" : ["Data Scientist Stream", "softwarearchitect.jpg"],
+        "2" : ["Web Architect Stream", "webarchitect.png"],
+        "3" : ["Software Architect Stream", "softwarearchitect.jpg"],
+        "4" : ["Forensic Scientist Stream", "forensicscience.jpg"],
+        "5" : ["Software Quality Assurance Stream", "softwarequalityassurance.jpg"],
+        "6" : ["Astronomy Calculus Stream", "astronomycalculus.jpg"],
+        "7" : ["Multi-Agent Systems Stream", "aistream.png"],
+        "8" : ["Biological Statistics Stream", "biostatistics.jpg"],
+        "9" : ["Designing Renewable Energy Systems Stream", "renewablestream.jpg"],
+        "10": ["Robots and Automation Stream", "automation.jpg"]
+        
+}
+}
