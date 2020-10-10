@@ -3,7 +3,7 @@ class SessionClass {
 
     public static function create(){
         if(session_status() == PHP_SESSION_NONE){
-            session_start();
+            $_SESSION['test']="";
         }
         
     }

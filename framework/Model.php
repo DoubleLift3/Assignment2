@@ -3,11 +3,11 @@
   abstract class Model{
 
     public function loadData(array $data){
-        /*
+        
         $info = file_get_contents($data);
         $info= json_decode($info, true);
         $users = array("Name" => $info["Name"], "Email" => $info["Value"]);
-        */
+        
     }
     abstract public function getAll() : array;
 
