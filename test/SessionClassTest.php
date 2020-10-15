@@ -23,8 +23,25 @@ class SessionClassTest extends TestCase{
 
     public function testSessionContainerCreated() : void{
         SessionClass::create();
-        $this->assertArrayHasKey('container', $_SESSION);
-        $this->assertIsArray($_SESSION['container']);
+        $this->assertEquals(PHP_SESSION_ACTIVE, true);
+    }
+
+    public function testSessionDestroyed() : void{
+        SessionClass::create();
+        SessionClass::destroy();
+        $this->assertEquals(PHP_SESSION_NONE, true);
+    }
+
+    public function testSessionRemove() : void{
+        SessionClass::create();
+        SessionClass::remove($_SESSION["test"]);
+        $this->assertNull($_SESSION);
+    }
+
+    public function testSessionAdd() : void{
+        $testVariable = 'xc';
+        $testingValue = 6;
+       SessionClass::add($testVariable, $testingValue);
     }
 
 }

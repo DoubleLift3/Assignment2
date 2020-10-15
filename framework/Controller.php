@@ -13,6 +13,6 @@ abstract class Controller {
         $this->view = $view;
     }
     
-    abstract public  function run();
+    abstract public function run();
     
 }

@@ -2,27 +2,18 @@
 
   abstract class Model{
 
-    public function loadData(array $data){
-        
-        $info = file_get_contents($data);
-        $info= json_decode($info, true);
-        $users = array("Name" => $info["Name"], "Email" => $info["Value"]);
-        
+      protected $cached_json = [];
+
+    public function loadData(string $fromFile) : array{
+        $filename = basename($fromFile. 'json');
+        if(!isset($this->cached_json[$filename]) || empty($this->cached_json[filename])){
+          $json_file=file_get_contents($fromFile);
+          $this->cached_json[$filename] = json_decode($json_file, true);  
+        }
+        return $this->cached_json[$filename];
     }
     abstract public function getAll() : array;
 
     abstract public function getRecord(string $id) : array;
-    /*
-    public function getAll() : array{
-
-        $data = file_get_contents("Users.json");  
-        $data= json_decode($data, true);  
-        var_dump($data);
-        //$observers = array("Name" => $data["Name"])
-        
-    }
     
-    public function getRecord(string $id) : array{
-        return $observers['id'];
-    }*/
 }

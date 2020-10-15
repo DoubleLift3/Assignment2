@@ -1,6 +1,5 @@
 <?php 
 
-include('Observer.php');
 class View implements Observer {
 
     private $tpl = '';
@@ -20,15 +19,18 @@ class View implements Observer {
     }
 
     public function addVar(string $name, $value){
-        $this->data['name'] = $name;
-        $this->data['value'] = $value;
+        if(preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $name) == 0 ){
+            trigger_error('Invalid variable name used', E_USER_ERROR);
+        } 
+        $this->data[$name] = $value;
+
     }
 
 
     public function update(Observable_Model $obs){
         $records = $obs->giveUpdate();
-        foreach ($records as $r){
-            $this->addVar($r['name'], $r['val']);
+        foreach ($records as $k=>$r){
+            $this->addVar($k, $r);
         }
         $this->display();
     }

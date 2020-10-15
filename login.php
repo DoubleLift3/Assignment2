@@ -1,5 +1,5 @@
-<?php 
+<?php
 require 'autoload.php';
 
-$controller = new IndexController();
+$controller = new LoginController();
 $controller->run();

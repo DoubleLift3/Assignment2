@@ -3,12 +3,9 @@
 use PHPUnit\Framework\TestCase;
 require 'framework/Observable_Model.php';
 
-class Observable_ModelTest{
+class Observable_ModelTest extends TestCase{
 
-    public function testModelObjectIsCreated () : void{
-        $this->assertIsObject(new Model);
-    }
-
+ 
     public function testModelHasStaticMethodgetAll() : void {
         $method = new ReflectionMethod('Model', 'getAll');
         $this->assertTrue($method->isStatic(), 'Method getAll() exists but is static');

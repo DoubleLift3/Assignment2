@@ -1,6 +1,5 @@
 <?php 
-include('Model.php');
-include('Observable.php');
+
 abstract class Observable_Model extends Model implements Observable{
 
 
@@ -28,6 +27,15 @@ abstract class Observable_Model extends Model implements Observable{
 
         return $this->updatedData; 
     }
+
+    public function updateTheChangedData(array $d){
+        $this->updatedData = $d;
+    }
+   
+    public function passwordVerify(string $password){
+        
+    }
+    
     abstract public function getAll() : array;
     
     abstract public function getRecord(string $id) : array;
