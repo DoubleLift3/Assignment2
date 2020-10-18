@@ -32,9 +32,7 @@ abstract class Observable_Model extends Model implements Observable{
         $this->updatedData = $d;
     }
    
-    public function passwordVerify(string $password){
-        
-    }
+  
     
     abstract public function getAll() : array;
     

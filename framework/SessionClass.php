@@ -19,22 +19,22 @@ class SessionClass {
         //header("Location: index.php");
     }
 
-    public function add(string $name, $value){
-        if(preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $name) == 0 ){
+    public function add(string $email, $value){
+        /*if(preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $name) == 0 ){
             trigger_error('Invalid variable name used', E_USER_ERROR);
-        } 
-        $_SESSION[$name] = $value ;
+        } */
+        $_SESSION[$email] = $value ;
     }
 
-    public function show($name){
-        if(isset($_SESSION[$name])){
-            return $_SESSION[$name];
+    public function show($email){
+        if(isset($_SESSION[$email])){
+            return $_SESSION[$email];
         }
         return null;
     }
-    public function remove(string $name){
-        if(isset($_SESSION[$name])){
-            unset($_SESSION[$name]);
+    public function remove(string $email){
+        if(isset($_SESSION[$email])){
+            unset($_SESSION[$email]);
         }
     }
 

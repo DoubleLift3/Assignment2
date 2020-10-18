@@ -10,7 +10,7 @@
 		<a href="index.php"><img src="images/logo.png" alt="UWI online"></a>
 			<ul>
 				<li><a href="courses.php?controller=Courses">Courses</a></li>
-				<li><a href="index.php?controller=Streams">Streams</a></li>
+				<li><a href="streams.php?controller=Streams">Streams</a></li>
 				<li><a href="index.php?controller=AboutUs">About Us</a></li>
 				<li><a href="login.php?controller=Login">Login</a></li>
 				<li><a href="index.php?controller=SignUp">Sign Up</a></li>
@@ -20,12 +20,21 @@
 		   <div class="login-box">
 			<div class="login-box-body">
 			<p class="login-box-msg">Be Curious - Sign In</p>
-			<form action="#" method="post">
+			<?php 
+                        if (!empty($error)) :
+                ?>
+                <ul>
+               
+                <li><?php echo $error?></li>
+                <?php 
+                    endif;
+                ?>
+			<form action="profile.php" method="post">
 			  <div class="form-group has-feedback">
-				<input type="text" class="form-control" placeholder="Email"/>
+				<input type="text" class="form-control" name="email" placeholder="Email"/>
 			  </div>
 			  <div class="form-group has-feedback">
-				<input type="password" class="form-control" placeholder="Password"/>
+				<input type="password" class="form-control" name="password" placeholder="Password"/>
 			  </div>
 			  <div class="row">
 				<div class="col-xs-8">    
@@ -41,7 +50,7 @@
 			  </div>
 			</form>
 			<br>
-			<a href="register.html" class="text-center">Sign Up</a>
+			<a href="signup.php" class="text-center">Sign Up</a>
        </div><!-- /.login-box-body -->
 	  </div>
 			<footer>
