@@ -23,11 +23,10 @@ class ProfileController extends Controller {
 
             $passWRD = $this->model->getRecord($_POST['email']);
             $userPassword = implode("",$passWRD);
-            //$verify = password_verify($_POST['password'], $userPassword);
+            $verify = password_verify($_POST['password'], $userPassword);
             
-
-
-            if($session->accessible($user, 'profile') && /*$verify == true*/  $userPassword == $_POST['password']){
+    
+            if($session->accessible($user, 'profile') && $verify == true /*$userPassword == $_POST['password']*/){
                 //get all courses the user is registered for
                 $data = $this->model->getAll();
                 //tell the model to update the changed data 

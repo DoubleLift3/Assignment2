@@ -1,11 +1,1 @@
-[
-        {
-        "name":"Test User",
-        "email":"tester@comp3170.com",
-        "password":"Testpassw0rd"
-         }
-         ,
-         {"name":"robin",
-        "password":"$2y$10$JCDFjptmjdPa4SEUniLzl.FwND25YFKhgO.1A92BdDgtkSeBfj31O",
-        "email": "c@g.com"}
-    ]
+[{"name":"keisha forde","email":"k@f.com","password":"$2y$10$Uhd6iqqq9XMQR\/ZYYykazudgbP84T3mInPCKVuKc40PXM.mT7FDuG"},{"name":"robin","email":"r@b.com","password":"$2y$10$9WZGA5IIpXdnJsKbFes.h.YtMrOg03JzC7ujufm2sgF\/iwCtRxY\/."},{"name":"aqua man","email":"aqua@sea.com","password":"$2y$10$Ek1\/NpEgklL1AKLzN14PneSo8t.ZpnE5JiXBTvN7ChBvrBlJY3zB."},{"name":"Test User","email":"tester@comp3170.com","password":"$2y$10$9Utwzv.bmLb5Th4N3tL2u.LxLyqjVUlGj5ayO3RPScuIaQbjbjLDi"}]

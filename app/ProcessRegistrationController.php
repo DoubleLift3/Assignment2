@@ -15,13 +15,13 @@ class ProcessRegistrationController extends Controller {
        $data = $this->model->getAll();
         var_dump($data);
         //store name, email and password in an array
-        $userData = array($_POST['formFullName'], $hashedPassword, $_POST['email']);
-        $tempArray[] = $userData;
-        array_push($data, $tempArray);
+        $userData = array('name' => $_POST['formFullName'], 'email' => $_POST['email'], 'password' => $hashedPassword);
+        array_push($data, $userData);
         $jsonData = json_encode($data);
         var_dump($jsonData);
-        file_put_contents('Users.json', $jsonData);
-        header("Location: login.php");
+       file_put_contents(DATA_DIR . '/Users.json'
+, $jsonData);
+       header("Location: login.php");
         
     }
     
