@@ -26,7 +26,7 @@ class ProfileController extends Controller {
             $verify = password_verify($_POST['password'], $userPassword);
             
     
-            if($session->accessible($user, 'profile') && $verify == true /*$userPassword == $_POST['password']*/){
+            if($session->accessible($user, 'profile') && $verify == true){
                 //get all courses the user is registered for
                 $data = $this->model->getAll();
                 //tell the model to update the changed data 
