@@ -2,7 +2,7 @@
 namespace App\Apps;
 use Quwi\framework\CommandContext;
 use Quwi\framework\PageController_Command_Abstract;
-use Quwi\framework\View;
+
 
 
 class IndexController extends PageController_Command_Abstract {

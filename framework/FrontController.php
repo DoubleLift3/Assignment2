@@ -1,6 +1,7 @@
 <?php
 
 namespace Quwi\framework;
+use App\Apps\SessionClass;
 class FrontController extends FrontController_Abstract{
 
     private function __construct(){
@@ -18,12 +19,11 @@ class FrontController extends FrontController_Abstract{
 
     //use this method to initialize helper objects e.g:SessionManager, Validator
     protected function init(){
+       // SessionClass::create();
         //$session = new SessionClass();
-       // $session->create();
-       $responeHandler = ResponseHandler::__construct();
-       $responseHeader = new ResponseHeader();
-       $responseState = new ResponseState();
-       $responseLogger = new ResponseLogger();
+       
+      
+      
 
     }
 

@@ -1,6 +1,7 @@
 <?php 
 
 namespace Quwi\framework;
+use App\Apps\View;
 
 abstract class PageController_Command_Abstract implements Command_Interface {
 
