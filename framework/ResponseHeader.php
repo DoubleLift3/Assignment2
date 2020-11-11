@@ -12,7 +12,7 @@ class ResponseHeader extends Response_Abstract{
         return '';
     }
 
-    public function showEntry(int$i): string {
+    public function showEntry(int $i): string {
         return '';
     }
 }
