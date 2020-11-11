@@ -1,6 +1,11 @@
 <?php
 
-class SignupController extends Controller{
+namespace App\Apps;
+use Quwi\framework\CommandContext;
+use Quwi\framework\PageController_Command_Abstract;
+use Quwi\framework\View;
+
+class SignupController extends PageController_Command_Abstract{
 
     public function run(){
         //create the model object 
@@ -14,5 +19,11 @@ class SignupController extends Controller{
         
         
         $this->model->notify();
+    }
+
+    public function execute(CommandContext $context) : bool{
+        $this->data = $context;
+        $this->run();
+        return true;
     }
 }

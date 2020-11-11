@@ -1,19 +1,13 @@
 <?php
-spl_autoload_register(function($class){
-
-    if (!defined('APP_DIR')){
-        define("ROOT_DIR", 'C:\wamp64\www\FrameworksAssignment');
-        define("APP_DIR", ROOT_DIR . '\app');
-        define("FRAMEWORK_DIR", ROOT_DIR . '\framework');
-        define('TPL_DIR', ROOT_DIR . '\tpl');
-        define('DATA_DIR', ROOT_DIR . '\data');
-
-    }
-    if (file_exists(FRAMEWORK_DIR . "/" . $class . '.php')){
-        require FRAMEWORK_DIR . '/' . $class . '.php';
-    }
-    elseif (file_exists(APP_DIR . "/" . $class . '.php')){
+spl_autoload_register(function($classname){
+    $parts = explode('\\', $classname);
+    $class = $parts[count($parts)-1];
+    //echo $class; exit;
+    if  (file_exists(APP_DIR . "/" . $class . '.php')){
         require APP_DIR . "/" . $class . '.php';
+    }
+    elseif (file_exists(FRAMEWORK_DIR . "/" . $class . '.php')){
+        require FRAMEWORK_DIR . '/' . $class . '.php';
     }
     elseif (file_exists(TPL_DIR . '/' . $class . '.php')){
         require TPL_DIR . '/' . $class . '.php';

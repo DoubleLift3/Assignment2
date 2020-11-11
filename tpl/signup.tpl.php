@@ -7,20 +7,20 @@
 	</head>
 	<body>
 		<nav>
-			<a href="#"><img src="images/logo.png" alt="UWI online"></a>
+		<a href="index.php"><img src="images/logo.png" alt="UWI online"></a>
 			<ul>
-				<li><a href="courses.php?controller=Courses">Courses</a></li>
+				<li><a href="index.php?controller=Courses">Courses</a></li>
 				<li><a href="index.php?controller=Streams">Streams</a></li>
 				<li><a href="index.php?controller=AboutUs">About Us</a></li>
-				<li><a href="login.php?controller=Login">Login</a></li>
-				<li><a href="signup.php?controller=SignUp">Sign Up</a></li>
+				<li><a href="index.php?controller=Login">Login</a></li>
+				<li><a href="index.php?controller=SignUp">Sign Up</a></li>
 			</ul>
 		</nav>
 		<main>
 		   <div class="register-box">
 			<div class="register-box-body">
 			<p class="login-box-msg">Sign Up - Feed Your Curiosity</p>
-        <form action="processRegistration.php" method="post">
+        <form action="index.php?controller=ProcessRegistration" method="post">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="formFullName" placeholder="Full name"/>
           </div>

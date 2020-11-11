@@ -1,4 +1,5 @@
 <?php 
+namespace Quwi\framework;
 
 abstract class Observable_Model extends Model implements Observable{
 
@@ -31,10 +32,8 @@ abstract class Observable_Model extends Model implements Observable{
     public function updateTheChangedData(array $d){
         $this->updatedData = $d;
     }
-   
-  
+      
+    abstract public function findAll() : array;
     
-    abstract public function getAll() : array;
-    
-    abstract public function getRecord(string $id) : array;
+    abstract public function findRecord(string $id) : array;
 }

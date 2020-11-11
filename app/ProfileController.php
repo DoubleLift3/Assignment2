@@ -1,10 +1,15 @@
 <?php
 
-class ProfileController extends Controller {
+namespace App\Apps;
+use Quwi\framework\CommandContext;
+use Quwi\framework\PageController_Command_Abstract;
+use Quwi\framework\View;
+use Quwi\framework\SessionClass;
+
+
+class ProfileController extends PageController_Command_Abstract {
 
     public function run(){
-
-
             $error = '';
             SessionClass::create();
             $session = new SessionClass();
@@ -21,14 +26,13 @@ class ProfileController extends Controller {
             //check if the user can access the page
             $user = $session->show('email');
 
-            $passWRD = $this->model->getRecord($_POST['email']);
+            $passWRD = $this->model->findRecord($_POST['password']);
             $userPassword = implode("",$passWRD);
-            $verify = password_verify($_POST['password'], $userPassword);
             
     
-            if($session->accessible($user, 'profile') && $verify == true){
+            if($session->accessible($user, 'profile') && $_POST['password'] == $userPassword){
                 //get all courses the user is registered for
-                $data = $this->model->getAll();
+                $data = $this->model->findAll();
                 //tell the model to update the changed data 
                 $this->model->updateThechangedData($data); 
         
@@ -36,9 +40,17 @@ class ProfileController extends Controller {
             }else{
                $this->error = 'Invalid Email and/or Password';
                $v->setTemplate(TPL_DIR . '/login.tpl.php');
+               var_dump($verify) ;
+
                $v->display();
             }
            
         
+    }
+
+    public function execute(CommandContext $context) : bool{
+        $this->data = $context;
+        $this->run();
+        return true;
     }
 }

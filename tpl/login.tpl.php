@@ -9,10 +9,10 @@
 		<nav>
 		<a href="index.php"><img src="images/logo.png" alt="UWI online"></a>
 			<ul>
-				<li><a href="courses.php?controller=Courses">Courses</a></li>
-				<li><a href="streams.php?controller=Streams">Streams</a></li>
+				<li><a href="index.php?controller=Courses">Courses</a></li>
+				<li><a href="index.php?controller=Streams">Streams</a></li>
 				<li><a href="index.php?controller=AboutUs">About Us</a></li>
-				<li><a href="login.php?controller=Login">Login</a></li>
+				<li><a href="index.php?controller=Login">Login</a></li>
 				<li><a href="index.php?controller=SignUp">Sign Up</a></li>
 			</ul>
 		</nav>
@@ -29,7 +29,7 @@
                 <?php 
                     endif;
                 ?>
-			<form action="profile.php" method="post">
+			<form action="index.php?controller=Profile" method="post">
 			  <div class="form-group has-feedback">
 				<input type="text" class="form-control" name="email" placeholder="Email"/>
 			  </div>
@@ -50,7 +50,7 @@
 			  </div>
 			</form>
 			<br>
-			<a href="signup.php" class="text-center">Sign Up</a>
+			<a href="index.php?controller=SignUp" class="text-center">Sign Up</a>
        </div><!-- /.login-box-body -->
 	  </div>
 			<footer>

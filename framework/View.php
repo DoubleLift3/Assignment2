@@ -1,5 +1,5 @@
 <?php 
-
+namespace Quwi\framework;
 class View implements Observer {
 
     private $tpl = '';
@@ -20,8 +20,11 @@ class View implements Observer {
 
     public function addVar(string $name, $value){
         if(preg_match('/^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$/', $name) == 0 ){
+            var_dump($name);
             trigger_error('Invalid variable name used', E_USER_ERROR);
+           
         } 
+       
         $this->data[$name] = $value;
 
     }

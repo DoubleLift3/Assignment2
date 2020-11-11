@@ -1,5 +1,5 @@
 <?php 
-
+namespace Quwi\framework;
 class SessionClass {
 
     protected $access = ['profile'=>['tester@comp3170.com', 'shamba', 'batman']];

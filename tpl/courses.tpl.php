@@ -9,18 +9,18 @@
 		<nav>
 			<a href="index.php"><img src="images/logo.png" alt="UWI online"></a>
 			<ul>
-				<li><a href="courses.php?controller=Courses">Courses</a></li>
-				<li><a href="streams.php?controller=Streams">Streams</a></li>
+				<li><a href="index.php?controller=Courses">Courses</a></li>
+				<li><a href="index.php?controller=Streams">Streams</a></li>
 				<li><a href="index.php?controller=AboutUs">About Us</a></li>
-				<li><a href="login.php?controller=Login">Login</a></li>
-				<li><a href="signup.php?controller=SignUp">Sign Up</a></li>
+				<li><a href="index.php?controller=Login">Login</a></li>
+				<li><a href="index.php?controller=SignUp">Sign Up</a></li>
 			</ul>
 		</nav>
 		<main>
 		<h1>Courses</h1>
 		<ul class="course-list">
 			<li><div>
-				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
+				<a href="#"><img src="images/genetics.jpg" alt="course image"></a>
 				</div>
 				<div>
 				<a href="#"><span class="faculty-department">Faculty or Department</span>	

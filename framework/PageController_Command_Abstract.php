@@ -1,6 +1,8 @@
 <?php 
 
-abstract class Controller {
+namespace Quwi\framework;
+
+abstract class PageController_Command_Abstract implements Command_Interface {
 
     protected $model  = null;
     protected $view = null;
@@ -15,4 +17,5 @@ abstract class Controller {
     
     abstract public function run();
     
+    abstract public function execute(CommandContext $context) : bool;
 }

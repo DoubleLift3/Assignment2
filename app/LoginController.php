@@ -1,5 +1,12 @@
 <?php 
-class LoginController extends Controller{
+
+namespace App\Apps;
+use Quwi\framework\CommandContext;
+use Quwi\framework\PageController_Command_Abstract;
+use Quwi\framework\View;
+use Quwi\framework\SessionClass;
+
+class LoginController extends PageController_Command_Abstract{
     public function run(){
 
         SessionClass::create();
@@ -13,11 +20,18 @@ class LoginController extends Controller{
         $this->model->attach($this->view);
         
         
-        $data = $this->model->getAll();
+        $data = $this->model->findAll();
         //tell the model to update the changed data 
         $this->model->updateThechangedData($data); 
 
         $this->model->notify();
         
+    }
+
+    
+    public function execute(CommandContext $context) : bool{
+        $this->data = $context;
+        $this->run();
+        return true;
     }
 } 
