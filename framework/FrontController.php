@@ -20,6 +20,11 @@ class FrontController extends FrontController_Abstract{
     protected function init(){
         //$session = new SessionClass();
        // $session->create();
+       $responeHandler = ResponseHandler::__construct();
+       $responseHeader = new ResponseHeader();
+       $responseState = new ResponseState();
+       $responseLogger = new ResponseLogger();
+
     }
 
     protected function handleRequest(){
